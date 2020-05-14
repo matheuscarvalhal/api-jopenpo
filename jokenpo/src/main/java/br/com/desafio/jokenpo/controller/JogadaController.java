@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.desafio.jokenpo.common.business.JogadaService;
 import br.com.desafio.jokenpo.common.entity.Jogada;
-import br.com.desafio.jokenpo.common.entity.Jogador;
 import br.com.desafio.jokenpo.common.exceptions.ResourceNotFoundException;
 import br.com.desafio.jokenpo.common.exceptions.ResourceUnprocesableException;
 import br.com.desafio.jokenpo.common.utils.Mensagens;
@@ -31,7 +30,7 @@ public class JogadaController {
 	private JogadaService jogadaService;
 
 	@PostMapping("/jogadas")
-	@ApiOperation(value = "Cadastra uma jogada.", httpMethod = "POST", response = Jogador.class)
+	@ApiOperation(value = "Cadastra uma jogada.", httpMethod = "POST", response = Jogada.class)
 	public Jogada salvar(@Valid @RequestBody JogadaDto jogadorDto) throws ResourceUnprocesableException {
 
 		Jogada jogada = jogadaService.save(new Jogada(jogadorDto.getTipo()));
@@ -43,13 +42,13 @@ public class JogadaController {
 	}
 
 	@GetMapping("/jogadas")
-	@ApiOperation(value = "Retorna todas as jogadas cadastradas.", httpMethod = "GET", response = Jogador.class)
+	@ApiOperation(value = "Retorna todas as jogadas cadastradas.", httpMethod = "GET", response = Jogada.class)
 	public Set<Jogada> listar() {
 		return jogadaService.findAll();
 	}
 
 	@GetMapping("/jogadas/{id}")
-	@ApiOperation(value = "Retorna a jogada do ID informado.", httpMethod = "GET", response = Jogador.class)
+	@ApiOperation(value = "Retorna a jogada do ID informado.", httpMethod = "GET", response = Jogada.class)
 	public ResponseEntity<Jogada> buscarPorId(@PathVariable Long id) throws ResourceNotFoundException {
 		Jogada jogada = jogadaService.findById(id);
 
@@ -60,7 +59,7 @@ public class JogadaController {
 	}
 
 	@DeleteMapping("/jogadas/{id}")
-	@ApiOperation(value = "Deleta a jogada do ID informado.", httpMethod = "DELETE", response = Jogador.class)
+	@ApiOperation(value = "Deleta a jogada do ID informado.", httpMethod = "DELETE", response = Jogada.class)
 	public Map<String, Boolean> deletar(@PathVariable Long id) throws ResourceNotFoundException {
 		Jogada jogada = jogadaService.findById(id);
 
