@@ -1,4 +1,4 @@
-package br.com.desafio.jokenpo.dto;
+package br.com.desafio.jokenpo.common.dto;
 
 import br.com.desafio.jokenpo.common.enums.TipoJogada;
 

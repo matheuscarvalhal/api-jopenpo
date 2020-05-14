@@ -16,11 +16,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.desafio.jokenpo.common.business.JogadaService;
+import br.com.desafio.jokenpo.common.dto.JogadaDto;
 import br.com.desafio.jokenpo.common.entity.Jogada;
 import br.com.desafio.jokenpo.common.exceptions.ResourceNotFoundException;
 import br.com.desafio.jokenpo.common.exceptions.ResourceUnprocesableException;
 import br.com.desafio.jokenpo.common.utils.Mensagens;
-import br.com.desafio.jokenpo.dto.JogadaDto;
 import io.swagger.annotations.ApiOperation;
 
 @RestController

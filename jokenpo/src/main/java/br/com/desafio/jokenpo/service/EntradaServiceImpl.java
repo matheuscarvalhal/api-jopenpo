@@ -8,8 +8,8 @@ import org.springframework.stereotype.Service;
 
 import br.com.desafio.jokenpo.common.business.EntradaService;
 import br.com.desafio.jokenpo.common.business.JogadorService;
+import br.com.desafio.jokenpo.common.dto.EntradaDto;
 import br.com.desafio.jokenpo.common.entity.Entrada;
-import br.com.desafio.jokenpo.dto.EntradaDto;
 
 @Service
 public class EntradaServiceImpl implements EntradaService {
